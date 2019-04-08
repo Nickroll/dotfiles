@@ -110,4 +110,6 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'iamcco/markdown-preview.nvim', {'do':{-> mkdp#util#install()}}
   let g:mkdp_auto_start=1
 
+ Plug 'vimwiki/vimwiki'
+
 call plug#end()
