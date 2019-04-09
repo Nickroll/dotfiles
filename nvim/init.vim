@@ -25,8 +25,8 @@ set showmatch
 set hidden
 set history=100
 set hlsearch
-set splitright
 set splitbelow
+set splitright
 set fileformat=unix
 set cursorline
 set wildmenu
@@ -55,6 +55,16 @@ call plug#begin('~/.config/nvim/plugged')
 
  Plug 'ervandew/supertab'
   let g:SuperTabClosePreviewOnPopupClose=1
+
+ Plug 'airblade/vim-gitgutter'
+ Plug 'scrooloose/nerdtree'
+  map <Leader>n :NERDTreeToggle<CR>
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  autocmd vimenter * NERDTree
+  let g:NERDTreeDirArrowExpandable='▸'
+  let g:NERDTreeDirArrowCollapsible='▾'
+
+ Plug 'Xuyuanp/nerdtree-git-plugin'
  Plug 'morhetz/gruvbox'
  Plug 'valloric/youcompleteme'
   "let g:ycm_add_preview_to_completeopt=1
