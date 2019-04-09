@@ -13,8 +13,7 @@ nmap <silent> <C-i> <Plug>(pydocstring)
 "Ale Specific
 let b:ale_linters=['flake8']
 let b:ale_fixers=['autopep8', 'isort']
-let b:ale_python_flake8_options='--ignore=E501'
+let b:ale_python_flake8_options='--ignore=E501,E252'
 "
 "Fix for python
 let g:Python3_host_prog='/Users/rollernt/miniconda3/bin/python3'
-
