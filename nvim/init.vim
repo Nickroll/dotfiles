@@ -70,9 +70,13 @@ call plug#begin('~/.config/nvim/plugged')
   "let g:ycm_add_preview_to_completeopt=1
   let g:ycm_confirm_extra_conf=0
   let g:ycm_key_list_select_completion=['<TAB>', '<Down>']
-  let g:ycm_python_binary_path='/Users/rollernt/miniconda3/bin/python3'
+  let g:ycm_python_binary_path='~/miniconda3/bin/python3'
   let g:ycm_max_num_candidates=10
   let g:ycm_autoclose_preview_after_completion=1
+  let g:ycm_python_interpreter_path=''
+  let g:ycm_python_sys_path=[]
+  let g:ycm_extra_conf_vim_data=['g:ycm_python_interpreter_path', 'g:ycm_python_sys_path']
+  let g:ycm_global_ycm_extra_conf='~/.config/nvim/global_extra_conf.py'
   let g:ycm_semantic_trings = {
                           \'c': ['->', '.'],
                           \'objc': ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
