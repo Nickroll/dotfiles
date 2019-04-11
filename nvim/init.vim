@@ -3,7 +3,7 @@ filetype on
 colorscheme gruvbox
 
 "Filetype Plugins
-filetype plugin on
+filetype plugin indent on
 
 "Mappings
 let mapleader=" "
@@ -17,6 +17,7 @@ nnoremap o o<Esc>
 nnoremap O O<Esc>
 map <Leader>s :source ~/.config/nvim/init.vim<CR>
 map <Leader>q :bd<CR>
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "Sets
 set number
@@ -44,6 +45,9 @@ set ignorecase
 set smartcase
 set mouse=""
 
+"AutoCMD
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
 "Backspace fix
 set backspace=indent,eol,start
 
@@ -52,9 +56,6 @@ let &shell='/bin/bash'
 let mapleader=" "
 
 call plug#begin('~/.config/nvim/plugged')
-
- Plug 'ervandew/supertab'
-  let g:SuperTabClosePreviewOnPopupClose=1
 
  Plug 'airblade/vim-gitgutter'
  Plug 'scrooloose/nerdtree'
@@ -66,12 +67,21 @@ call plug#begin('~/.config/nvim/plugged')
 
  Plug 'Xuyuanp/nerdtree-git-plugin'
  Plug 'morhetz/gruvbox'
- Plug 'Shougo/deoplete.nvim'
+ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+ let g:deoplete#max_list=10
+ let g:deoplete#enable_at_startup=1
+ let g:deoplete#min_pattern_length=1
+ let g:deoplete#sources#jedi#show_docstring=1
+
  Plug 'Shougo/context_filetype.vim'
  Plug 'davidhalter/jedi-vim'
+  let g:jedi#completions_enabled=0
+  let g:jedi#use_splits_not_buffers='right'
+
  Plug 'deoplete-plugins/deoplete-jedi'
  Plug 'vim-airline/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
+
  Plug 'vim-airline/vim-airline-themes'
   let g:airline_theme='gruvbox'
 
