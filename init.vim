@@ -44,7 +44,7 @@ set dir=~/.config/nvim/tmp
 set ignorecase
 set smartcase
 set mouse=""
-
+"
 "AutoCMD
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
@@ -79,6 +79,7 @@ call plug#begin('~/.config/nvim/plugged')
   let g:jedi#use_splits_not_buffers='right'
 
  Plug 'deoplete-plugins/deoplete-jedi'
+
  Plug 'vim-airline/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
 
