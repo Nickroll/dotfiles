@@ -59,7 +59,7 @@ call plug#begin('~/.config/nvim/plugged')
 
  Plug 'airblade/vim-gitgutter'
  Plug 'scrooloose/nerdtree'
-  map <Leader>n :NERDTreeToggle<CR>
+  map <Leader>t :NERDTreeToggle<CR>
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   autocmd vimenter * NERDTree
   let g:NERDTreeDirArrowExpandable='▸'
