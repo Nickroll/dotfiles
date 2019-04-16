@@ -47,6 +47,7 @@ set mouse=""
 "
 "AutoCMD
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+autocmd BufWritePre * :%s/\s\+$//e
 
 "Backspace fix
 set backspace=indent,eol,start
