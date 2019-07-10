@@ -55,8 +55,10 @@ set signcolumn=yes			" Signs allowed
 set nowrap				" Dont wrap line
 set nolinebreak				" Remove line break
 set wildmenu                            " Show completion options
-set cmdheight=2 			" More room
+set cmdheight=3 			" More room
 set fixendofline 			" No EOL on file save
+set shortmess+=c 			" CoC message fix
+
 
 "AutoCMD
 "" Remove Trailing whitespace on write
@@ -138,23 +140,23 @@ call plug#end()
 
 "CoC
  " Use <Tab> for completion trigger and navigation
-  function! s:check_back_space() abort
-	  let col = col('.') - 1
-	  return !col || getline('.')[col - 1] =~ '\s'
-  endfunction
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] =~# '\s'
+endfunction
 
  " Next by tab
-  inoremap <silent><expr> <TAB>
-			 \ pumvisible() ? "\<C-n>" :
-			 \ <SID>check_back_space() ? "\<TAB>" :
-			 \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <TAB>
+			\ pumvisible() ? "\<C-n>" :
+			\ <SID>check_back_space() ? "\<TAB>" :
+			\ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
  " c-space to trigger completion
-  imap <expr><c-space> coc#refresh()
+imap <expr><c-space> coc#refresh()
 
  " Do not auto to next line on completion
-  inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
  " Remap keys for gotos
   nmap <silent> gd <Plug>(coc-definition)
@@ -163,15 +165,15 @@ call plug#end()
   nmap <silent> gr <Plug>(coc-references)
 
  " Use K to show documentation in preview window
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-  function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-	    execute 'h '.expand('<cword>')
-    else
-	    call CocAction('doHover')
-    endif
-  endfunction
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
+endfunction
 
  " Rename Function
   nmap <leader>rn <Plug>(coc-rename)
