@@ -17,7 +17,29 @@ nnoremap o o<Esc>
 nnoremap O O<Esc>
 map <Leader>s :source ~/.config/nvim/init.vim<CR>
 map <Leader>q :bd<CR>
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr> <tab>
+			\ pumvisible() ? "\<C-n>" :
+			\ <SID>check_back_space() ? "\<TAB>" :
+			\ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>"
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <leader>rn <Plug>(coc-rename)
+
+" functions
+function! s:check_back_space() abort
+	let col = col('.') -1
+	return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+function! s:show_documentation()
+	if (index(['vim', 'help'], &filetype) >= 0)
+		execute 'h '.expand('<cword')
+	else
+		call CocAction('doHover')
+	endif
+endfunction
+
 
 "Sets
 set number
@@ -44,7 +66,14 @@ set dir=~/.config/nvim/tmp
 set ignorecase
 set smartcase
 set mouse=""
-"
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set signcolumn=yes
+set shortmess+=c
+
+
 "AutoCMD
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd BufWritePre * :%s/\s\+$//e
@@ -60,6 +89,7 @@ call plug#begin('~/.config/nvim/plugged')
 
  Plug 'airblade/vim-gitgutter'
  Plug 'scrooloose/nerdtree'
+
   map <Leader>t :NERDTreeToggle<CR>
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   autocmd vimenter * NERDTree
@@ -67,19 +97,10 @@ call plug#begin('~/.config/nvim/plugged')
   let g:NERDTreeDirArrowCollapsible='▾'
 
  Plug 'Xuyuanp/nerdtree-git-plugin'
+
  Plug 'morhetz/gruvbox'
- Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
- let g:deoplete#max_list=10
- let g:deoplete#enable_at_startup=1
- let g:deoplete#min_pattern_length=1
- let g:deoplete#sources#jedi#show_docstring=1
 
  Plug 'Shougo/context_filetype.vim'
- Plug 'davidhalter/jedi-vim'
-  let g:jedi#completions_enabled=0
-  let g:jedi#use_splits_not_buffers='right'
-
- Plug 'deoplete-plugins/deoplete-jedi'
 
  Plug 'vim-airline/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
@@ -88,15 +109,16 @@ call plug#begin('~/.config/nvim/plugged')
   let g:airline_theme='gruvbox'
 
  Plug 'vim-scripts/indentpython.vim'
+
  Plug 'raimondi/delimitmate'
- Plug 'w0rp/ale'
-  let g:ale_fixers={
-                          \ '*':['remove_trailing_lines', 'trim_whitespace']}
-  let g:ale_fix_on_save=1
-  let g:ale_sign_column_always=1
-  let g:ale_lint_delay=200
-  let g:ale_lint_on_enter=1
-  let g:ale_lint_on_save=1
+ "Plug 'w0rp/ale'
+ " let g:ale_fixers={
+ "                         \ '*':['remove_trailing_lines', 'trim_whitespace']}
+ " let g:ale_fix_on_save=1
+ " let g:ale_sign_column_always=1
+ " let g:ale_lint_delay=200
+ " let g:ale_lint_on_enter=1
+ " let g:ale_lint_on_save=1
 
  Plug 'luochen1990/rainbow'
   let g:rainbow_active=1
@@ -106,8 +128,11 @@ call plug#begin('~/.config/nvim/plugged')
   let g:indentLine_color_term=246
 
  Plug 'heavenshell/vim-pydocstring'
+
  Plug 'skywind3000/asyncrun.vim'
+
  Plug 'godlygeek/tabular'
+
  Plug 'plasticboy/vim-markdown'
   let g:vim_markdown_fenced_languages = ['python=py']
 
@@ -115,5 +140,7 @@ call plug#begin('~/.config/nvim/plugged')
   let g:mkdp_auto_start=1
 
  Plug 'vimwiki/vimwiki'
+
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
