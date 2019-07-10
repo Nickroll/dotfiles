@@ -56,6 +56,7 @@ set nowrap				" Dont wrap line
 set nolinebreak				" Remove line break
 set wildmenu                            " Show completion options
 set cmdheight=2 			" More room
+set fixendofline 			" No EOL on file save
 
 "AutoCMD
 "" Remove Trailing whitespace on write
