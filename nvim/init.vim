@@ -34,7 +34,6 @@ set history=100				" More history
 set hlsearch				" Highlights search term
 set splitbelow				" Split window is now bellow
 set splitright				" Vsplit now to the right
-set fileformat=unix			" Format is unix by default
 set cursorline				" Cursor line highlighted
 set lazyredraw				" Redraw when necessary
 set foldmethod=indent			" Fold on indents
@@ -50,12 +49,13 @@ set ignorecase				" Ignore case when searching
 set smartcase				" Lowercase is captial when searching
 set mouse=""				" Disable mouse
 set nobackup				" Delete backup on write
+set nowritebackup 			" Poossible issue fix
 set updatetime=300			" Update at 300 sec
 set signcolumn=yes			" Signs allowed
 set nowrap				" Dont wrap line
 set nolinebreak				" Remove line break
 set wildmenu                            " Show completion options
-set cmdheight=3 			" More room
+set cmdheight=2 			" More room
 set fixendofline 			" No EOL on file save
 set shortmess+=c 			" CoC message fix
 
@@ -104,7 +104,6 @@ call plug#end()
 "NERDTree
   map <Leader>t :NERDTreeToggle<CR>
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  autocmd vimenter * NERDTree
   let g:NERDTreeDirArrowExpandable='▸'
   let g:NERDTreeDirArrowCollapsible='▾'
 
