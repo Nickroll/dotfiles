@@ -24,6 +24,11 @@ noremap <silent><Leader>lb :set wrap!<CR>\| :set linebreak!<CR>
 "" J/K move by wraps and lines
 noremap j gj
 noremap k gk
+"" Kill AsyncRun
+nnoremap <Leader>k :AsyncStop<CR>
+"" Macro Fun
+nnoremap <Leader>m @q
+
 
 "Sets
 set number				" Show number
