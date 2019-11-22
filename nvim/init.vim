@@ -1,6 +1,5 @@
 "Basic settings
 filetype on
-colorscheme gruvbox
 filetype plugin indent on
 
 "Basic Mappings
@@ -28,7 +27,12 @@ noremap k gk
 nnoremap <Leader>k :AsyncStop<CR>
 "" Macro Fun
 nnoremap <Leader>m @q
-
+"" Next buffer
+nnoremap <Leader>n :bn<CR>
+"" Open init.vim
+nnoremap <Leader>p :edit ~/.config/nvim/init.vim <CR>
+"" C-I remap fix
+nnoremap <C-P> <C-i>
 
 "Sets
 set number				" Show number
@@ -181,3 +185,9 @@ endfunction
 
  " Rename Function
   nmap <leader>rn <Plug>(coc-rename)
+
+" Color Theme
+ colorscheme gruvbox
+
+" PyDocString
+ nmap <silent> <C-_> <Plug>(pydocstring)
