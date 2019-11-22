@@ -28,7 +28,7 @@ nnoremap <Leader>k :AsyncStop<CR>
 "" Macro Fun
 nnoremap <Leader>m @q
 "" Next buffer
-nnoremap <Leader>n :bn<CR>
+nnoremap <C-B> :bn<CR>
 "" Open init.vim
 nnoremap <Leader>p :edit ~/.config/nvim/init.vim <CR>
 "" C-I remap fix
