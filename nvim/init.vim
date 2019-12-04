@@ -191,3 +191,6 @@ endfunction
 
 " PyDocString
  nmap <silent> <C-_> <Plug>(pydocstring)
+
+" AsyncRun
+ let g:asyncrun_open=8
