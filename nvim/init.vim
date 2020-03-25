@@ -35,6 +35,9 @@ nnoremap <Leader>p :edit ~/.config/nvim/init.vim <CR>
 nnoremap <C-P> <C-i>
 "" Insert python shebang
 nnoremap <Leader>sb i#!/usr/bin/env python<CR><Esc>
+"" Comment out the current line (Python)
+nnoremap <Leader>c 0i# <Esc>
+nnoremap <Leader>C F#x
 
 "Sets
 set number				" Show number
