@@ -4,6 +4,7 @@ filetype plugin indent on
 
 "Basic Mappings
 let mapleader=" "
+let maplocalleader=","
 "" Faster Navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -37,7 +38,14 @@ nnoremap <C-P> <C-i>
 nnoremap <Leader>sb i#!/usr/bin/env python<CR><Esc>
 "" Comment out the current line (Python)
 nnoremap <Leader>c 0i# <Esc>
-nnoremap <Leader>C F#x
+nnoremap <Leader>C F#xx
+
+
+" Commands and Functions
+"" vim grep with notes folder for writing
+command! -nargs=1 Ngrep vimgrep "<args>" $NOTES_DIR/*.txt
+nnoremap <leader>[ :Ngrep
+
 
 "Sets
 set number				" Show number
@@ -72,13 +80,12 @@ set wildmenu                            " Show completion options
 set cmdheight=2 			" More room
 set fixendofline 			" No EOL on file save
 set shortmess+=c 			" CoC message fix
-
+set expandtab                           " Tabs expanded to spaces
 
 "AutoCMD
 "" Remove Trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//e
-
-
+"
 "Backspace fix
 set backspace=indent,eol,start
 
@@ -89,6 +96,8 @@ let mapleader=" "
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
 
+ Plug 'tpope/vim-surround'
+ Plug 'christoomey/vim-tmux-navigator'
  Plug 'airblade/vim-gitgutter'
  Plug 'scrooloose/nerdtree'
  Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -105,11 +114,13 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'skywind3000/asyncrun.vim'
  Plug 'godlygeek/tabular'
  Plug 'plasticboy/vim-markdown'
- Plug 'iamcco/markdown-preview.nvim', {'do':{-> mkdp#util#install()}}
- Plug 'vimwiki/vimwiki'
  Plug 'moll/vim-bbye'
  Plug 'neoclide/coc.nvim', {'branch' : 'release'}
  Plug 'sheerun/vim-polyglot'
+ Plug 'vim-pandoc/vim-pandoc'
+ Plug 'vim-pandoc/vim-pandoc-syntax'
+ Plug 'jceb/vim-orgmode'
+ Plug 'mattn/calendar-vim'
 
 call plug#end()
 
@@ -144,9 +155,6 @@ call plug#end()
 
 "Vim markdown
  let g:vim_markdown_fenced_languages = ['python=py']
-
-"Md preview
- let g:mkdp_auto_start=1
 
 "BBye
  nnoremap <silent><Leader>q :Bdelete<CR>
@@ -199,3 +207,15 @@ endfunction
 
 " AsyncRun
  let g:asyncrun_open=8
+
+" Pandoc
+au BufNewFile,BufFilePre,BufRead *.txt set filetype=pandoc
+let g:pandoc#filetypes#handled = ['pandoc', 'markdown', 'textile']
+let g:pandoc#biblio#use_bibtool = 1
+let g:pandoc#completion#bib#mode = 'fallback'
+let g:pandoc#syntax#conceal#use = 0
+
+" Local spell
+autocmd FileType tex,md,markdown,pandoc, setlocal spell
+
+" Vim-orgmode

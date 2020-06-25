@@ -7,13 +7,14 @@ alias grep='grep --color=auto'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias mkdir='mkdir -pv'
-alias ll='ls -al'
-
+alias ll='ls -altr'
+alias sbp='source ~/.bash_profile'
+alias ebp='nvim ~/.bash_profile'
+alias eni='nvim ~/.config/nvim/init.vim'
+# Better CD
 cd() { builtin cd "$@"; ls; }
 
-# added by Miniconda3 installer
-# export PATH="/Users/rollernt/miniconda3/bin:$PATH"  # commented out by conda initialize
-
+# Auto activate env
 function conda_auto_env() {
   if [ -e "environment.yml" ]; then
     # echo "environment.yml file found"
@@ -56,3 +57,21 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 bind Space:magic-space
+export PATH=${PATH}:/Users/rollernt/edirect
+
+# Function for getting bibtex from doi number
+doi2bib()
+{
+	echo >> $2;
+	curl -s "http://api.crossref.org/works/$1/transform/application/x-bibtex" >> $2;
+	echo >> $2
+}
+
+pmid2bib()
+{
+	curl -s "https://www.ncbi.nlm.nih.gov/pubmed/$1?report=xml&format=raw" | sed -e 's/&gt;/>/g' -e's/&lt;/</g' | med2xml | xml2bib -b >> $2
+}
+
+# adding scripts to path
+export PATH=$PATH:~/.scripts
+export SHELL='/bin/bash'

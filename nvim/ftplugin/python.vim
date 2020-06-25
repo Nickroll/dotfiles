@@ -6,7 +6,7 @@ setlocal expandtab
 setlocal shiftwidth=4
 
 "Plugin Specific
-map <Leader>y :AsyncRun -raw python %<CR>
+map <Leader>y :w!<CR> :AsyncRun -raw python %<CR>
 let $PYTHONUNBUFFERED=1
 nmap <silent> <C-i> <Plug>(pydocstring)
 
