@@ -1,5 +1,4 @@
 # Aliases
-
 alias ls='ls -Fh --color=auto'
 alias rm='rm -i'
 alias grep='grep --color=auto'
