@@ -1,0 +1,19 @@
+# Vars
+HISTFILE=~/.zsh_history
+SAVEHIST=1000
+setopt inc_append_history # To save every command before it is executed
+setopt share_history # setopt inc_append_history
+
+# Sources
+source ~/dotfiles/zsh/aliases.zsh
+source ~/dotfiles/zsh/keybinds.zsh
+
+# Better CD
+chpwd() {
+ls
+}
+
+# Exports
+export EDITOR='nvim'
+export LS_COLORS=di=34:ln=35:so=32:pi=0:ex=31:bd=0:cd=0:su=31:sg=31:tw=34:ow=34 # Better Colors
+export PATH=$PATH:~/.local/bin
