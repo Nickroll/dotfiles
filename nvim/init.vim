@@ -4,7 +4,7 @@ filetype plugin indent on
 
 "Basic Mappings
 let mapleader=" "
-let maplocalleader=","
+
 "" Faster Navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -40,14 +40,8 @@ nnoremap <Leader>sb i#!/usr/bin/env python<CR><Esc>
 nnoremap <Leader>c 0i# <Esc>
 nnoremap <Leader>C F#xx
 
-
-" Commands and Functions
-"" vim grep with notes folder for writing
-command! -nargs=1 Ngrep vimgrep "<args>" $NOTES_DIR/*.txt
-nnoremap <leader>[ :Ngrep
-
-
 "Sets
+set termguicolors                       " True color support
 set number				" Show number
 set colorcolumn=100			" Width column
 set showmatch				" Show matching bracket/paranth
@@ -65,7 +59,7 @@ set visualbell				" Visual noise
 set relativenumber			" Numbers are relative to line
 set incsearch				" Find as typeing
 set encoding=UTF-8			" Defualt encoding
-set clipboard=unnamed			" Copy to unnamed
+set clipboard^=unnamed,unnamedplus	" Copy to unnamed
 set dir=~/.config/nvim/tmp		" Dir for swp files
 set ignorecase				" Ignore case when searching
 set smartcase				" Lowercase is captial when searching
@@ -96,12 +90,12 @@ let mapleader=" "
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
 
+ Plug 'ayu-theme/ayu-vim'
  Plug 'tpope/vim-surround'
  Plug 'christoomey/vim-tmux-navigator'
  Plug 'airblade/vim-gitgutter'
  Plug 'scrooloose/nerdtree'
  Plug 'Xuyuanp/nerdtree-git-plugin'
- Plug 'morhetz/gruvbox'
  Plug 'Shougo/context_filetype.vim'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
@@ -119,8 +113,6 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'sheerun/vim-polyglot'
  Plug 'vim-pandoc/vim-pandoc'
  Plug 'vim-pandoc/vim-pandoc-syntax'
- Plug 'jceb/vim-orgmode'
- Plug 'mattn/calendar-vim'
 
 call plug#end()
 
@@ -133,9 +125,8 @@ call plug#end()
   let g:NERDTreeDirArrowCollapsible='▾'
 
 "Airline
-  let g:airline_theme='gruvbox'
   let g:airline#extensions#tabline#enabled = 1
-
+  let g:airline_theme='ayu_dark'
 "Ale
  let g:ale_fixers={
                           \ '*':['remove_trailing_lines', 'trim_whitespace']}
@@ -199,8 +190,7 @@ endfunction
  " Rename Function
   nmap <leader>rn <Plug>(coc-rename)
 
-" Color Theme
- colorscheme gruvbox
+  let g:coc_disable_startup_warning = 1
 
 " PyDocString
  nmap <silent> <C-_> <Plug>(pydocstring)
@@ -218,4 +208,6 @@ let g:pandoc#syntax#conceal#use = 0
 " Local spell
 autocmd FileType tex,md,markdown,pandoc, setlocal spell
 
-" Vim-orgmode
+" Ayu
+let ayucolor='dark'
+colorscheme ayu
