@@ -11,7 +11,8 @@ git config --global push.default current
 source ~/dotfiles/zsh/aliases.zsh
 source ~/dotfiles/zsh/keybinds.zsh
 source ~/dotfiles/zsh/prompt.zsh
-
+source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#
 # Better CD
 chpwd() {
 ls
