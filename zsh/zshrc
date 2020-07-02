@@ -8,6 +8,7 @@ git config --global push.default current
 # Sources
 source ~/dotfiles/zsh/aliases.zsh
 source ~/dotfiles/zsh/keybinds.zsh
+source ~/dotfiles/zsh/prompt.zsh
 
 # Better CD
 chpwd() {

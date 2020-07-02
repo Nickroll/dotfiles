@@ -1,3 +1,5 @@
 # Nvim
 .netrwhist
 nvim/plugged/*
+nvim/tmp/
+nvim/tmp/*
