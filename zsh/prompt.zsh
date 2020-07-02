@@ -24,18 +24,6 @@ git_copied_symbol=''
 
 # Prompt Functions
 
-constructor () {
-        # Builds the prompt
-        # ARGS        VALUE            DESC
-        # ----------------------------------
-        # 1           string           the string to build
-        # 2           color            color of string before it
-        # 3           string           string to build
-
-        echo "$(%{$FG[$2]%}$1)$(%{$FG[$2]%}$3)%{$reset_color%}"
-
-}
-
 git_parse () {
         #Taken from github.com/hohmannr/bubblified
         local git_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
