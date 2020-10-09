@@ -8,11 +8,12 @@ setopt share_history # setopt inc_append_history
 git config --global push.default current
 
 # Sources
+source ~/dotfiles/zsh/conda_auto.zsh
 source ~/dotfiles/zsh/aliases.zsh
 source ~/dotfiles/zsh/keybinds.zsh
 source ~/dotfiles/zsh/prompt.zsh
 source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-#
+
 # Better CD
 chpwd() {
 ls
@@ -34,25 +35,3 @@ else
         fi
 fi
 unset __conda_setup
-
-function conda_auto_env() {
-  if [ -e "environment.yml" ]; then
-    # echo "environment.yml file found"
-    ENV=$(head -n 1 environment.yml | cut -f2 -d ' ')
-    # Check if you are already in the environment
-    if [[ $PATH != *$ENV* ]]; then
-      # Check if the environment exists
-      source activate $ENV
-      if [ $? -eq 0 ]; then
-        :
-      else
-        # Create the environment and activate
-        echo "Conda env '$ENV' doesn't exist."
-        conda env create -q
-        source activate $ENV
-      fi
-    fi
-  fi
-}
-
-export PROMPT_COMMAND=conda_auto_env
