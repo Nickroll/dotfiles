@@ -22,3 +22,37 @@ ls
 export EDITOR='nvim'
 export LS_COLORS=di=34:ln=35:so=32:pi=0:ex=31:bd=0:cd=0:su=31:sg=31:tw=34:ow=34 # Better Colors
 export PATH=$PATH:~/.local/bin
+
+__conda_setup="$('/home/nick/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+else
+        if [ -f "/home/nick/miniconda3/etc/profile.d/conda.sh" ]; then
+                . "/home/nick/miniconda3/etc/profile.d/conda.sh"
+        else
+                export PATH="/home/nick/miniconda3/bin:$PATH"
+        fi
+fi
+unset __conda_setup
+
+function conda_auto_env() {
+  if [ -e "environment.yml" ]; then
+    # echo "environment.yml file found"
+    ENV=$(head -n 1 environment.yml | cut -f2 -d ' ')
+    # Check if you are already in the environment
+    if [[ $PATH != *$ENV* ]]; then
+      # Check if the environment exists
+      source activate $ENV
+      if [ $? -eq 0 ]; then
+        :
+      else
+        # Create the environment and activate
+        echo "Conda env '$ENV' doesn't exist."
+        conda env create -q
+        source activate $ENV
+      fi
+    fi
+  fi
+}
+
+export PROMPT_COMMAND=conda_auto_env
