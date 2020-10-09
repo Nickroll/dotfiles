@@ -193,7 +193,9 @@ endfunction
   let g:coc_disable_startup_warning = 1
 
 " PyDocString
- nmap <silent> <C-_> <Plug>(pydocstring)
+ nmap <silent> <C-l> <Plug>(pydocstring)
+ let g:pydocstring_doq_path = '/home/nick/miniconda3/envs/Flex/bin/doq'
+ let g:pydocstring_formatter = 'google'
 
 " AsyncRun
  let g:asyncrun_open=8
