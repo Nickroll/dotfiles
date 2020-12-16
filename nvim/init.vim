@@ -101,6 +101,7 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'vim-airline/vim-airline-themes'
  Plug 'vim-scripts/indentpython.vim'
  Plug 'raimondi/delimitmate'
+ " Remove ale maybe?
  Plug 'w0rp/ale'
  Plug 'luochen1990/rainbow'
  Plug 'yggdroot/indentline'
