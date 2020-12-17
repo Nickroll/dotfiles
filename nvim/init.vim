@@ -1,4 +1,4 @@
-"Basic settings
+"iBasic settings
 filetype on
 filetype plugin indent on
 
@@ -78,7 +78,7 @@ set expandtab                           " Tabs expanded to spaces
 
 "AutoCMD
 "" Remove Trailing whitespace on write
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//ge
 "
 "Backspace fix
 set backspace=indent,eol,start
@@ -100,8 +100,8 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
  Plug 'vim-scripts/indentpython.vim'
+ Plug 'dense-analysis/ale'
  Plug 'raimondi/delimitmate'
- Plug 'w0rp/ale'
  Plug 'luochen1990/rainbow'
  Plug 'yggdroot/indentline'
  Plug 'heavenshell/vim-pydocstring'
@@ -129,7 +129,10 @@ call plug#end()
   let g:airline_theme='ayu_dark'
 "Ale
  let g:ale_fixers={
-                          \ '*':['remove_trailing_lines', 'trim_whitespace']}
+                          \'python': ['autopep8', 'isort']}
+ let g:ale_linters={
+                         \ 'python': ['flake8']}
+ let g:ale_linters_explicit = 1
  let g:ale_fix_on_save=1
  let g:ale_statusline_format = ['E%d', 'W%d', 'K']
  let g:ale_sign_column_always=1
@@ -213,3 +216,11 @@ autocmd FileType tex,md,markdown,pandoc, setlocal spell
 " Ayu
 let ayucolor='dark'
 colorscheme ayu
+
+function TrimEndLines()
+    let save_cursor = getpos(".")
+    silent! %s#\($\n\s*\)\+\%$##
+    call setpos('.', save_cursor)
+endfunction
+
+autocmd BufWritePre *.py call TrimEndLines()
