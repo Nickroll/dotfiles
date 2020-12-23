@@ -7,38 +7,6 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-# vi cursor change
-
-function zle-keymap-select {
-        if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
-                echo -ne '\e[1 q'
-        elif [[ ${KEYMAP} == main ]] ||
-             [[ ${KEYMAP} == viins ]] ||
-             [[ ${KEYMAP} == '' ]] ||
-             [[ $1 = 'beam' ]]; then
-                echo -ne '\e[5 q'
-        fi
-}
-zle -N zle-keymap-select
-zle-line-ini(){
-        zle -K viins
-        echo -ne '\e[5 q'
-}
-zle -N zle-line-init
-echo -ne '\e[5 q'
-preexec() { echo -ne '\e[5 q' ;}
-
-
 setopt inc_append_history # To save every command before it is executed
 setopt share_history # setopt inc_append_history
 
@@ -47,10 +15,10 @@ git config --global push.default current
 # Sources
 source $HOME/dotfiles/zsh/conda_auto.zsh
 source $HOME/dotfiles/zsh/aliases.zsh
-source $HOME/dotfiles/zsh/keybinds.zsh
 source $HOME/dotfiles/zsh/prompt.zsh
 source $HOME/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/dotfiles/zsh/lfcd.zsh
+source $HOME/dotfiles/zsh/functs.zsh
+source $HOME/dotfiles/zsh/keybinds.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/zsh/vendor-completions/_fzf
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

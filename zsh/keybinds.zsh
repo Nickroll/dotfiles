@@ -1,17 +1,14 @@
-# git
-function git_prepare() {
-        if [ -n "$BUFFER" ];
-                then
-                        BUFFER="git add -A && git commit -m \"$BUFFER\" && git push"
-        fi
-
-        if [ -z "$BUFFER" ];
-                then
-                        BUFFER="git add -A && git commit -v && git push"
-        fi
-
-        zle accept-line
-}
-
-zle -N git_prepare
+# git keybind
 bindkey "^g" git_prepare
+
+# Vi keybinds
+bindkey -v
+export KEYTIMEOUT=1
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# lfcd
+bindkey -s '^[o' lfcd

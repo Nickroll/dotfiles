@@ -58,7 +58,3 @@ alt + ctrl + shift + {h,j,k,l}
 # Firefox
 alt + w
         firefox-esr
-
-# Open new LF window
-alt + f
-        alacritty -e $SHELL -c 'source $HOME/.config/zsh/.zshrc && clear && lfcd && $SHELL'
