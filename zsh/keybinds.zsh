@@ -1,5 +1,5 @@
 # git keybind
-bindkey "^g" git_prepare
+bindkey '^g' git_prepare
 
 # Vi keybinds
 bindkey -v
