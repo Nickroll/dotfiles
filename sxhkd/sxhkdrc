@@ -54,3 +54,11 @@ alt + ctrl + {h,j,k,l}
 # contract a window by moving one of its side inward
 alt + ctrl + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Firefox
+alt + w
+        firefox-esr
+
+# Open new LF window
+alt + f
+        alacritty -e $SHELL -c 'source $HOME/.config/zsh/.zshrc && clear && lfcd && $SHELL'
