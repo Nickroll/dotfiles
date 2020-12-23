@@ -1,4 +1,4 @@
-"iBasic settings
+"Basic settings
 filetype on
 filetype plugin indent on
 
@@ -76,10 +76,6 @@ set fixendofline 			" No EOL on file save
 set shortmess+=c 			" CoC message fix
 set expandtab                           " Tabs expanded to spaces
 
-"AutoCMD
-"" Remove Trailing whitespace on write
-autocmd BufWritePre * :%s/\s\+$//ge
-"
 "Backspace fix
 set backspace=indent,eol,start
 
@@ -90,7 +86,7 @@ let mapleader=" "
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
 
- Plug 'ayu-theme/ayu-vim'
+ Plug 'liuchengxu/vim-clap'
  Plug 'tpope/vim-surround'
  Plug 'christoomey/vim-tmux-navigator'
  Plug 'airblade/vim-gitgutter'
@@ -113,6 +109,7 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'sheerun/vim-polyglot'
  Plug 'vim-pandoc/vim-pandoc'
  Plug 'vim-pandoc/vim-pandoc-syntax'
+ Plug 'wadackel/vim-dogrun'
 
 call plug#end()
 
@@ -126,7 +123,8 @@ call plug#end()
 
 "Airline
   let g:airline#extensions#tabline#enabled = 1
-  let g:airline_theme='ayu_dark'
+  let g:airline_theme='violet'
+
 "Ale
  let g:ale_fixers={
                           \'python': ['autopep8', 'isort']}
@@ -204,23 +202,26 @@ call plug#end()
  let g:asyncrun_open=8
 
 " Pandoc
-au BufNewFile,BufFilePre,BufRead *.txt set filetype=pandoc
-let g:pandoc#filetypes#handled = ['pandoc', 'markdown', 'textile']
-let g:pandoc#biblio#use_bibtool = 1
-let g:pandoc#completion#bib#mode = 'fallback'
-let g:pandoc#syntax#conceal#use = 0
+ au BufNewFile,BufFilePre,BufRead *.txt set filetype=pandoc
+ let g:pandoc#filetypes#handled = ['pandoc', 'markdown', 'textile']
+ let g:pandoc#biblio#use_bibtool = 1
+ let g:pandoc#completion#bib#mode = 'fallback'
+ let g:pandoc#syntax#conceal#use = 0
 
 " Local spell
-autocmd FileType tex,md,markdown,pandoc, setlocal spell
+ autocmd FileType tex,md,markdown,pandoc, setlocal spell
 
-" Ayu
-let ayucolor='dark'
-colorscheme ayu
+" Color
+ colorscheme dogrun
 
+" Remove trailing whitespace and lines
 function TrimEndLines()
     let save_cursor = getpos(".")
     silent! %s#\($\n\s*\)\+\%$##
     call setpos('.', save_cursor)
 endfunction
+autocmd BufWritePre * call TrimEndLines()
+autocmd BufWritePre * %s/\s\+$//e
 
-autocmd BufWritePre *.py call TrimEndLines()
+"Vim clap
+let g:clap_theme='dogrun'
