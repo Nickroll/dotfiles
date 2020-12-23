@@ -12,7 +12,6 @@ function git_prepare() {
 
         zle accept-line
 }
-
 zle -N git_prepare
 
 # Vi cursor change

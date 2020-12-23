@@ -1,6 +1,3 @@
-# git keybind
-bindkey '^g' git_prepare
-
 # Vi keybinds
 bindkey -v
 export KEYTIMEOUT=1
@@ -12,3 +9,5 @@ bindkey -v '^?' backward-delete-char
 
 # lfcd
 bindkey -s '^[o' 'lfcd\n'
+# git
+bindkey '^g' git_prepare

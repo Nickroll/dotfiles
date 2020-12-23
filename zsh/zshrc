@@ -10,7 +10,6 @@ compinit
 setopt inc_append_history # To save every command before it is executed
 setopt share_history # setopt inc_append_history
 
-git config --global push.default current
 
 # Sources
 source $HOME/dotfiles/zsh/conda_auto.zsh
@@ -23,6 +22,7 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/zsh/vendor-completions/_fzf
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+git config --global push.default current
 # Better CD
 chpwd() {
 ls
