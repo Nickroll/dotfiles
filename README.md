@@ -6,4 +6,4 @@ Most of my files inside my .confg dir just source the files here so that way I c
 
 [<img src="https://imgur.com/LWFFyvE">]
 
-[<img src="https://imgur.com/l6Q1B9C"]
+[<img src="https://imgur.com/l6Q1B9C">]
