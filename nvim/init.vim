@@ -36,9 +36,6 @@ nnoremap <Leader>p :edit ~/.config/nvim/init.vim <CR>
 nnoremap <C-P> <C-i>
 "" Insert python shebang
 nnoremap <Leader>sb i#!/usr/bin/env python<CR><Esc>
-"" Comment out the current line (Python)
-nnoremap <Leader>c 0i# <Esc>
-nnoremap <Leader>C F#xx
 
 "Sets
 set termguicolors                       " True color support
@@ -225,3 +222,5 @@ autocmd BufWritePre * %s/\s\+$//e
 
 "Vim clap
 let g:clap_theme='dogrun'
+nnoremap <Leader>f :Clap blines <CR>
+nnoremap <Leader>c :Clap <CR>
