@@ -15,3 +15,6 @@ bindkey '^g' git_prepare
 
 # conda deactivate
 bindkey -s '^d' 'conda deactivate\n'
+
+# fzf into nvim
+bindkey -s '^e' 'nvim $(fzf)\n'
