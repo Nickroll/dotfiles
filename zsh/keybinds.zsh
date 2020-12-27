@@ -8,6 +8,10 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # lfcd
-bindkey -s '^[o' 'lfcd\n'
+bindkey -s '^o' 'lfcd\n'
+
 # git
 bindkey '^g' git_prepare
+
+# conda deactivate
+bindkey -s '^d' 'conda deactivate\n'

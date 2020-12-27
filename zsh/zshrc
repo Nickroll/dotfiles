@@ -19,6 +19,7 @@ source $HOME/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/dotfiles/zsh/functs.zsh
 source $HOME/dotfiles/zsh/keybinds.zsh
 source $HOME/dotfiles/zsh/fzf.zsh
+source $HOME/dotfiles/zsh/lficons.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/zsh/vendor-completions/_fzf
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
