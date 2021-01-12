@@ -1,2 +1,12 @@
 {
+  "languageserver": {
+    "golang": {
+      "command": "$HOME/go/bin/gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
 }

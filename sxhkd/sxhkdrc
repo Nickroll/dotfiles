@@ -21,6 +21,10 @@ alt + p
 alt + {h,j,k,l}
         bspc node -f {west,south,north,east}
 
+# Restart bspwm
+alt + ctrl +r
+	bspc wm -r
+
 # Move node
 alt + {_,shift + }{h,j,k,l}
         bspc node -{f,s} {west,south,north,east}

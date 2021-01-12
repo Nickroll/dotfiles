@@ -38,40 +38,40 @@ nnoremap <C-P> <C-i>
 nnoremap <Leader>sb i#!/usr/bin/env python<CR><Esc>
 
 "Sets
-set termguicolors                       " True color support
-set number				" Show number
-set colorcolumn=100			" Width column
-set showmatch				" Show matching bracket/paranth
-set hidden				" Allow buffer switch without write
-set history=100				" More history
-set hlsearch				" Highlights search term
-set splitbelow				" Split window is now bellow
-set splitright				" Vsplit now to the right
-set cursorline				" Cursor line highlighted
-set lazyredraw				" Redraw when necessary
-set foldmethod=indent			" Fold on indents
-set foldlevel=99			" Max fold by default
-set title				" Title for window
-set visualbell				" Visual noise
-set relativenumber			" Numbers are relative to line
-set incsearch				" Find as typeing
-set encoding=UTF-8			" Defualt encoding
+set termguicolors                   " True color support
+set number				                  " Show number
+set colorcolumn=100			            " Width column
+set showmatch				                " Show matching bracket/paranth
+set hidden				                  " Allow buffer switch without write
+set history=100			      	        " More history
+set hlsearch				                " Highlights search term
+set splitbelow				              " Split window is now bellow
+set splitright				              " Vsplit now to the right
+set cursorline				              " Cursor line highlighted
+set lazyredraw				              " Redraw when necessary
+set foldmethod=indent			          " Fold on indents
+set foldlevel=99			              " Max fold by default
+set title				                    " Title for window
+set visualbell			      	        " Visual noise
+set relativenumber			            " Numbers are relative to line
+set incsearch				                " Find as typeing
+set encoding=UTF-8			            " Defualt encoding
 set clipboard^=unnamed,unnamedplus	" Copy to unnamed
-set dir=~/.config/nvim/tmp		" Dir for swp files
-set ignorecase				" Ignore case when searching
-set smartcase				" Lowercase is captial when searching
-set mouse=""				" Disable mouse
-set nobackup				" Delete backup on write
-set nowritebackup 			" Poossible issue fix
-set updatetime=300			" Update at 300 sec
-set signcolumn=yes			" Signs allowed
-set nowrap				" Dont wrap line
-set nolinebreak				" Remove line break
-set wildmenu                            " Show completion options
-set cmdheight=2 			" More room
-set fixendofline 			" No EOL on file save
-set shortmess+=c 			" CoC message fix
-set expandtab                           " Tabs expanded to spaces
+set dir=~/.config/nvim/tmp		      " Dir for swp files
+set ignorecase				              " Ignore case when searching
+set smartcase				                " Lowercase is captial when searching
+set mouse=""				                " Disable mouse
+set nobackup				                " Delete backup on write
+set nowritebackup 			            " Poossible issue fix
+set updatetime=300			            " Update at 300 sec
+set signcolumn=yes			            " Signs allowed
+set nowrap				                  " Dont wrap line
+set nolinebreak				              " Remove line break
+set wildmenu                        " Show completion options
+set cmdheight=2 			              " More room
+set fixendofline 			              " No EOL on file save
+set shortmess+=c 			              " CoC message fix
+set expandtab                       " Tabs expanded to spaces
 
 "Backspace fix
 set backspace=indent,eol,start
@@ -224,3 +224,6 @@ autocmd BufWritePre * %s/\s\+$//e
 let g:clap_theme='dogrun'
 nnoremap <Leader>f :Clap blines <CR>
 nnoremap <Leader>c :Clap <CR>
+
+"Coc-go
+ autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
