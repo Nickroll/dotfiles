@@ -36,7 +36,7 @@ nnoremap <Leader>p :edit ~/.config/nvim/init.vim <CR>
 nnoremap <C-P> <C-i>
 "" Insert python shebang
 nnoremap <Leader>sb i#!/usr/bin/env python<CR><Esc>
-nnoremap <Leader>ab :ColorizerAttachToBuffer<CR>
+nnoremap <Leader>ab :ColorizerToggle<CR>
 
 "Sets
 set termguicolors                   " True color support
