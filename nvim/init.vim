@@ -36,6 +36,7 @@ nnoremap <Leader>p :edit ~/.config/nvim/init.vim <CR>
 nnoremap <C-P> <C-i>
 "" Insert python shebang
 nnoremap <Leader>sb i#!/usr/bin/env python<CR><Esc>
+nnoremap <Leader>ab :ColorizerAttachToBuffer<CR>
 
 "Sets
 set termguicolors                   " True color support
@@ -84,8 +85,6 @@ let mapleader=" "
 call plug#begin('~/.config/nvim/plugged')
 
  Plug 'liuchengxu/vim-clap'
- Plug 'tpope/vim-surround'
- Plug 'christoomey/vim-tmux-navigator'
  Plug 'airblade/vim-gitgutter'
  Plug 'scrooloose/nerdtree'
  Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -107,6 +106,7 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'vim-pandoc/vim-pandoc'
  Plug 'vim-pandoc/vim-pandoc-syntax'
  Plug 'wadackel/vim-dogrun'
+ Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 
@@ -225,5 +225,8 @@ let g:clap_theme='dogrun'
 nnoremap <Leader>f :Clap blines <CR>
 nnoremap <Leader>c :Clap <CR>
 
-"Coc-go
+" Coc-go
  autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+" Colorizer
+ lua require'colorizer'.setup()
