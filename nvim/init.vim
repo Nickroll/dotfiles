@@ -139,7 +139,7 @@ call plug#end()
  let g:rainbow_active=1
 
 "Indentline
- let g:indentLine_char='¦'
+ let g:indentLine_char='|'
  let g:indentLine_color_term=246
 
 "Vim markdown
