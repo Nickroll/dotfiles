@@ -50,7 +50,6 @@ set splitbelow				              " Split window is now bellow
 set splitright				              " Vsplit now to the right
 set cursorline				              " Cursor line highlighted
 set lazyredraw				              " Redraw when necessary
-set foldmethod=indent			          " Fold on indents
 set foldlevel=99			              " Max fold by default
 set title				                    " Title for window
 set visualbell			      	        " Visual noise

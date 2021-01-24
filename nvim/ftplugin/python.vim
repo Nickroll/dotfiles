@@ -12,3 +12,4 @@ nmap <silent> <C-i> <Plug>(pydocstring)
 
 "Ale Specific
 let b:ale_python_flake8_options='--ignore=E501,E252,E124,E741'
+set foldmethod=indent
