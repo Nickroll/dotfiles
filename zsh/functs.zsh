@@ -48,3 +48,7 @@ lfcd () {
         fi
     fi
 }
+
+kdf(){
+    ps ax -o pid,command,ppid | grep '<defunct>' | awk '{print $4}' | head -n -1 | sudo xargs kill -9
+}
