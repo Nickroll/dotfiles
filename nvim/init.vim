@@ -118,7 +118,7 @@ let g:nvim_tree_show_icons = {
    \ 'files': 2,
    \ }
 let g:nvim_tree_icons = {
-   \ 'default': '',
+   \ 'default': ' ',
    \ 'symlink': '',
    \ 'git': {
    \   'unstaged': "✗",
@@ -132,8 +132,8 @@ let g:nvim_tree_icons = {
    \ 'folder': {
    \   'default': "",
    \   'open': "",
-   \   'empty': "",
-   \   'empty_open': "",
+   \   'empty': "",
+   \   'empty_open': "",
    \   'symlink': "☊",
    \   'symlink_open': "☋",
    \   },
