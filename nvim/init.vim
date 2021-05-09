@@ -83,10 +83,11 @@ let mapleader=" "
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
 
+ Plug 'romgrk/barbar.nvim'
  Plug 'liuchengxu/vim-clap'
  Plug 'airblade/vim-gitgutter'
- Plug 'scrooloose/nerdtree'
- Plug 'Xuyuanp/nerdtree-git-plugin'
+ Plug 'kyazdani42/nvim-web-devicons' " for file icons
+ Plug 'kyazdani42/nvim-tree.lua'
  Plug 'Shougo/context_filetype.vim'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
@@ -99,7 +100,6 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'skywind3000/asyncrun.vim'
  Plug 'godlygeek/tabular'
  Plug 'plasticboy/vim-markdown'
- Plug 'moll/vim-bbye'
  Plug 'neoclide/coc.nvim', {'branch' : 'release'}
  Plug 'sheerun/vim-polyglot'
  Plug 'vim-pandoc/vim-pandoc'
@@ -111,11 +111,41 @@ call plug#end()
 
 "Plug Settings
 
-"NERDTree
-  map <Leader>t :NERDTreeToggle<CR>
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  let g:NERDTreeDirArrowExpandable='▸'
-  let g:NERDTreeDirArrowCollapsible='▾'
+"nvim tree
+let g:nvim_tree_show_icons = {
+   \ 'git': 1,
+   \ 'folders': 1,
+   \ 'files': 2,
+   \ }
+let g:nvim_tree_icons = {
+   \ 'default': '',
+   \ 'symlink': '',
+   \ 'git': {
+   \   'unstaged': "✗",
+   \   'staged': "✓",
+   \   'unmerged': "⤳",
+   \   'renamed': "➜",
+   \   'untracked': "⥻",
+   \   'deleted': "∗",
+   \   'ignored': "◌"
+   \   },
+   \ 'folder': {
+   \   'default': "",
+   \   'open': "",
+   \   'empty': "",
+   \   'empty_open': "",
+   \   'symlink': "☊",
+   \   'symlink_open': "☋",
+   \   },
+   \   'lsp': {
+   \     'hint': "",
+   \     'info': "",
+   \     'warning': "",
+   \     'error': "",
+   \   }
+   \ }
+
+ nnoremap <Leader>t :NvimTreeToggle<CR>
 
 "Airline
   let g:airline#extensions#tabline#enabled = 1
@@ -145,7 +175,7 @@ call plug#end()
  let g:vim_markdown_fenced_languages = ['python=py']
 
 "BBye
- nnoremap <silent><Leader>q :Bdelete<CR>
+ nnoremap <silent><Leader>q :BufferClose<CR>
 
 "CoC
  " Use <Tab> for completion trigger and navigation
@@ -225,6 +255,11 @@ nnoremap <Leader>c :Clap <CR>
 
 " Coc-go
  autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+" barbar
+ let bufferline = get(g:, 'bufferline', {})
+ let bufferline.closable = v:false
+ nnoremap <silent> <C-p> :BufferPick<CR>
 
 " Colorizer
  lua require'colorizer'.setup()
