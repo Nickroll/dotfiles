@@ -5,7 +5,9 @@ require('settings')
 require('keymapings')
 
 -- Plugins
-require('colorscheme')
+require('nvimtree-lua')
+require('colorscheme') -- after nvimtree
+require('barbar-lua')
 
 -- LSP
 require('compe-lua')

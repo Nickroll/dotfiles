@@ -18,5 +18,6 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
   use 'wadackel/vim-dogrun'
+  use 'romgrk/barbar.nvim'
 end)
 
