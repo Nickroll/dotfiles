@@ -39,6 +39,6 @@ return require('packer').startup(function()
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
     use 'p00f/nvim-ts-rainbow'
-
+    use 'rafamadriz/friendly-snippets'
 end)
 
