@@ -150,7 +150,7 @@ section.right = {
     {ShowLspClient = {
         provider = 'GetLspClient',
         condition = lspclient,
-        icon = '  ',
+        icon = '  ',
         highlight = {_COLORS.tan, _COLORS.grey, 'bold'}
     }},
     {FileFormat = {

@@ -34,6 +34,36 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = false,
   }
 )
+--
+-- symbols
+vim.lsp.protocol.CompletionItemKind = {
+    "   ",
+    " ♏ ",
+    " ⨍  ",
+    "   ",
+    "   ",
+    "   ",
+    "   ",
+    " ﰮ  ",
+    "   ",
+    " 襁 ",
+    "   ",
+    "   ",
+    " 練 ",
+    "   ",
+    "   ",
+    "   ",
+    "   ",
+    "   ",
+    "   ",
+    "   ",
+    " ﲀ  ",
+    " ﳤ  ",
+    "   ",
+    "   ",
+    " ₱  "
+}
+
 
 local function documentHighlight(client, bufnr)
     -- Set autocommands conditional on server_capabilities

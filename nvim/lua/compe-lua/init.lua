@@ -15,15 +15,20 @@ require'compe'.setup {
     documentation = true,
 
     source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    vsnip = true;
-    ultisnips = true;
+        path = {kind = "  "},
+        buffer = {kind = "  "},
+        calc = {kind = "  "},
+        vsnip = {kind = "  "},
+        nvim_lsp = {kind = "  "},
+        nvim_lua = {kind = " 輰 "},
+        spell = {kind = "  "},
+        snippets_nvim = {kind = "  "},
+        ultisnips = {kind = "  "},
+        treesitter = {kind = "  "},
+        lua = {kind = "  "}
   };
 }
+
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
