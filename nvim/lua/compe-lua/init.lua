@@ -19,13 +19,10 @@ require'compe'.setup {
         buffer = {kind = "  "},
         calc = {kind = "  "},
         vsnip = {kind = "  "},
-        nvim_lsp = {kind = "  "},
-        nvim_lua = {kind = " 輰 "},
         spell = {kind = "  "},
         snippets_nvim = {kind = "  "},
         ultisnips = {kind = "  "},
         treesitter = {kind = "  "},
-        lua = {kind = "  "}
   };
 }
 
