@@ -120,6 +120,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/nick/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag"
   },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/nick/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"

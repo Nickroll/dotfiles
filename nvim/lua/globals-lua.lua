@@ -10,20 +10,29 @@ O = {
 	timeoutlen = 1000,
 
     -- @usage pass a table with your desired languages
-  treesitter = {
+    treesitter = {
         ensure_installed = "all",
         ignore_install = {"haskell"},
         highlight = {enabled = true},
         playground = {enabled = true},
-        rainbow = {enabled = false}
+        rainbow = {enabled = true}
     },
-  lua = {
+    lua = {
         -- @usage can be 'lua-format'
         formatter = '',
         autoformat = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+        diagnostics = {virtual_text = {spacing = 0, prefix = "!"}, signs = true, underline = false}
+    },
+    python = {
+        linter = '',
+        -- @usage can be 'yapf', 'black'
+        formatter = '',
+        autoformat = false,
+        isort = false,
+        diagnostics = {virtual_text = {spacing = 0, prefix = "!"}, signs = true, underline = false},
+		analysis = {type_checking = "basic", auto_search_paths = true, use_library_code_types = true}
     },
 }
-
+--
 DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')

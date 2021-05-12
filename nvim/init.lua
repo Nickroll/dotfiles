@@ -14,8 +14,10 @@ require('galaxyline-lua')
 require('autopairs-lua')
 require('treesitter-lua')
 require('telescope-lua')
+require('ts-rainbow-lua')
 
 -- LSP
 require('compe-lua')
 require('lsp')
 require('lsp.lua-ls')
+require('lsp.python-ls')
