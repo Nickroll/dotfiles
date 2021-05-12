@@ -20,6 +20,7 @@ require'compe'.setup {
         calc = {kind = "  "},
         vsnip = {kind = "  "},
         spell = {kind = "  "},
+        nvim_lsp = true,
         snippets_nvim = {kind = "  "},
         ultisnips = {kind = "  "},
         treesitter = {kind = "  "},
