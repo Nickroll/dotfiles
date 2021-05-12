@@ -1,14 +1,14 @@
 vim.fn.sign_define(
     "LspDiagnosticsSignError",
-    {texthl = "LspDiagnosticsSignError", text = "擀", numhl = "LspDiagnosticsSignError"}
+    {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
 )
 vim.fn.sign_define(
     "LspDiagnosticsSignWarning",
-    {texthl = "LspDiagnosticsSignWarning", text = "㘚", numhl = "LspDiagnosticsSignWarning"}
+    {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"}
 )
 vim.fn.sign_define(
     "LspDiagnosticsSignHint",
-    {texthl = "LspDiagnosticsSignHint", text = "⻌", numhl = "LspDiagnosticsSignHint"}
+    {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"}
 )
 vim.fn.sign_define(
     "LspDiagnosticsSignInformation",

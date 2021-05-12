@@ -10,14 +10,33 @@ end
 
 return require('packer').startup(function()
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-  use 'kyazdani42/nvim-tree.lua' 
-  use 'kyazdani42/nvim-web-devicons'
-  use 'neovim/nvim-lspconfig'
-  use 'kabouzeid/nvim-lspinstall'
-  use 'hrsh7th/nvim-compe'
-  use 'hrsh7th/vim-vsnip'
-  use 'wadackel/vim-dogrun'
-  use 'romgrk/barbar.nvim'
+    use 'wbthomason/packer.nvim'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'kyazdani42/nvim-web-devicons'
+    use 'neovim/nvim-lspconfig'
+    use 'kabouzeid/nvim-lspinstall'
+    use 'hrsh7th/nvim-compe'
+    use 'hrsh7th/vim-vsnip'
+    use 'wadackel/vim-dogrun'
+    use 'romgrk/barbar.nvim'
+    use 'norcalli/nvim-colorizer.lua'
+    use {
+	    'lewis6991/gitsigns.nvim',
+	    requires = {
+            'nvim-lua/plenary.nvim'
+	    }
+    }
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+    }
+    use 'Iron-E/nvim-highlite'
+    use 'windwp/nvim-autopairs'
+    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use {"windwp/nvim-ts-autotag", opt = true}
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+}
 end)
 

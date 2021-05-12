@@ -10,6 +10,13 @@ O = {
 	timeoutlen = 1000,
 
     -- @usage pass a table with your desired languages
+  treesitter = {
+        ensure_installed = "all",
+        ignore_install = {"haskell"},
+        highlight = {enabled = true},
+        playground = {enabled = true},
+        rainbow = {enabled = false}
+    },
   lua = {
         -- @usage can be 'lua-format'
         formatter = '',

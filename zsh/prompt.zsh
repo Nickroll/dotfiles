@@ -16,9 +16,9 @@ git_clean_color='green'
 
 # Icons
 git_modified_symbol='ﲙ'
-git_added_symbol=''
-git_deleted_symbol=''
-git_untracked_symbol=''
+git_added_symbol=''
+git_deleted_symbol=''
+git_untracked_symbol=''
 git_renamed_symbol=''
 git_copied_symbol=''
 

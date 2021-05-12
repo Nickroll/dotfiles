@@ -22,3 +22,5 @@ vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 -- Better macro fun
 vim.api.nvim_set_keymap('n', '<Leader>m', '@q', { noremap = true, silent = true })
 
+-- Clear highlight
+vim.api.nvim_set_keymap('n', '<Leader>h', ':let @/=""<CR>', {silent = true})
