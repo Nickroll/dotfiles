@@ -54,19 +54,14 @@ require('telescope').setup {
             n = {
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
-                ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+                ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
                 -- ["<C-i>"] = my_cool_custom_action,
             }
         }
     },
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
-        }
-    }
+    extensions = {fzy_native = {override_generic_sorter = false, override_file_sorter = true}}
 }
 
-vim.api.nvim_set_keymap('n', '<Leader>c', ':Telescope<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'rg', ':Telescope live_grep<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>c', ':Telescope<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'rf', ':Telescope find_files<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'rg', ':Telescope live_grep<CR>', {noremap = true, silent = true})

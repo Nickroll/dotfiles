@@ -17,6 +17,7 @@ require('treesitter-lua')
 require('telescope-lua')
 require('ts-rainbow-lua')
 require('lsp-sig-lua')
+require('quickscope-lua')
 
 -- LSP
 require('compe-lua')
