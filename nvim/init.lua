@@ -18,6 +18,7 @@ require('telescope-lua')
 require('ts-rainbow-lua')
 require('lsp-sig-lua')
 require('quickscope-lua')
+require('dashboard-lua')
 
 -- LSP
 require('compe-lua')
