@@ -34,7 +34,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = false,
   }
 )
---
+
 -- symbols
 vim.lsp.protocol.CompletionItemKind = {
     "   ",

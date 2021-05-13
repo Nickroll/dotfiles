@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Aliases
 alias ls='ls -Fh --color=auto'
 alias rm='rm -i'

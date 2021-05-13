@@ -15,9 +15,13 @@ require('autopairs-lua')
 require('treesitter-lua')
 require('telescope-lua')
 require('ts-rainbow-lua')
+require('lsp-sig-lua')
 
 -- LSP
 require('compe-lua')
 require('lsp')
 require('lsp.lua-ls')
 require('lsp.python-ls')
+require('lsp.bash-ls')
+require('lsp.efm-ls')
+
