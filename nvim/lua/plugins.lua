@@ -31,5 +31,6 @@ return require('packer').startup(function()
     use 'rafamadriz/friendly-snippets'
     use 'ray-x/lsp_signature.nvim'
     use 'unblevable/quick-scope'
+    use 'glepnir/dashboard-nvim'
 end)
 
