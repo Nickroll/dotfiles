@@ -3,6 +3,7 @@ require('plugins')
 require('globals-lua')
 require('settings')
 require('keymapings')
+require('autocmds-lua')
 
 -- Plugins
 require('nvimtree-lua')
@@ -24,4 +25,3 @@ require('lsp.lua-ls')
 require('lsp.python-ls')
 require('lsp.bash-ls')
 require('lsp.efm-ls')
-

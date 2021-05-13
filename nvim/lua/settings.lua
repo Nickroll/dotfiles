@@ -33,7 +33,4 @@ vim.o.visualbell = true -- bell
 vim.o.ignorecase = true -- better search
 vim.o.smartcase = true -- better search
 vim.o.fixendofline = true
-vim.api.nvim_command([[
-autocmd BufWinEnter,BufNewFile * setlocal formatoptions-=ro
-]])
 

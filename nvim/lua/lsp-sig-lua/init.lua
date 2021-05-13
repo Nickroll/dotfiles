@@ -5,8 +5,6 @@
 
   hint_enable = true, -- virtual hint enable
   hint_prefix = " ",  -- Panda for parameter
-  hint_scheme = "String",
-
   handler_opts = {
     border = "double"   -- double, single, shadow, none
   },

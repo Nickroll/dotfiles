@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Aliases
-alias ls='ls -Fh --color=auto'
+alias ls='ls -Fh --color=auto --group-directories-first'
 alias rm='rm -i'
 alias grep='grep --color=auto'
 alias cp='cp -iv'
