@@ -148,6 +148,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  ["quick-scope"] = {
+    loaded = true,
+    path = "/home/nick/.local/share/nvim/site/pack/packer/start/quick-scope"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/telescope.nvim"
