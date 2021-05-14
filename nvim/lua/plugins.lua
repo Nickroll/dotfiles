@@ -32,5 +32,6 @@ return require('packer').startup(function()
     use 'ray-x/lsp_signature.nvim'
     use 'unblevable/quick-scope'
     use 'glepnir/dashboard-nvim'
+    use 'kdheepak/lazygit.nvim'
 end)
 
