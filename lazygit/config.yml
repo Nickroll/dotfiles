@@ -8,16 +8,16 @@ gui:
   theme:
     lightTheme: false # For terminals with a light background
     activeBorderColor:
-      - white
+      - green
       - bold
     inactiveBorderColor:
-      - green
+      - white
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - default
+      - reverse
     selectedRangeBgColor:
-      - blue
+      - reverse
   commitLength:
     show: true
   mouseEvents: true
@@ -54,7 +54,7 @@ reporting: 'undetermined' # one of: 'on' | 'off' | 'undetermined'
 confirmOnQuit: false
 # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
 quitOnTopLevelReturn: false
-disableStartupPopups: false
+disableStartupPopups: true
 notARepository: 'prompt' # one of: 'prompt' | 'create' | 'skip'
 keybinding:
   universal:
