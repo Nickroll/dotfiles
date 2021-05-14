@@ -52,3 +52,17 @@ lfcd () {
 kdf(){
     ps ax -o pid,command,ppid | grep '<defunct>' | awk '{print $4}' | head -n -1 | sudo xargs kill -9
 }
+
+# lazy git
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
+
