@@ -9,5 +9,3 @@ vim.g.nvim_tree_gitignore = 1
 vim.g.nvim_tree_highlight_opened_files = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_auto_open = 1
-
