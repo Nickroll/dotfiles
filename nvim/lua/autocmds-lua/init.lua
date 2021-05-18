@@ -3,7 +3,7 @@ local api = vim.api
 
 local auto_formatters = {}
 
-local python_autoformat = {'BufWritePre', '*.py', 'lua vim.lsp.buf.formatting_syn(nil, 1000'}
+local python_autoformat = {'BufWritePre', '*.py', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
 table.insert(auto_formatters, python_autoformat)
 
 local lua_format = {'BufWritePre', '*.lua', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
@@ -47,5 +47,6 @@ nvim_create_augroups({
         {'FileType', 'dashboard', 'nnoremap <silent> <buffer> q :q<CR>'},
         {'FileType', 'lspinfo', 'nnoremap <silent> <buffer> q :q<CR>'},
         {'FileType', 'floaterm', 'nnoremap <silent> <buffer> q :q<CR>'}
-    }
+    },
+    _python = {{'FileType', 'python', 'nnoremap <Leader>y :AsyncRun -raw python %<CR>'}}
 })
