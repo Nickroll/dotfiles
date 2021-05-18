@@ -20,6 +20,7 @@ require('lsp-sig-lua')
 require('quickscope-lua')
 require('dashboard-lua')
 require('lazygit-lua')
+require('asyncrun-lua')
 
 -- LSP
 require('compe-lua')

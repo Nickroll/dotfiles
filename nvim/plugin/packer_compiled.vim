@@ -71,6 +71,10 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["asyncrun.vim"] = {
+    loaded = true,
+    path = "/home/nick/.local/share/nvim/site/pack/packer/start/asyncrun.vim"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/barbar.nvim"
@@ -98,6 +102,10 @@ _G.packer_plugins = {
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+  },
+  ["moonlight.nvim"] = {
+    loaded = true,
+    path = "/home/nick/.local/share/nvim/site/pack/packer/start/moonlight.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

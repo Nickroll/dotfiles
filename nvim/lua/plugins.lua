@@ -34,5 +34,6 @@ return require('packer').startup(function()
     use 'glepnir/dashboard-nvim'
     use 'kdheepak/lazygit.nvim'
     use 'shaunsingh/moonlight.nvim'
+    use 'skywind3000/asyncrun.vim'
 end)
 
