@@ -33,5 +33,6 @@ return require('packer').startup(function()
     use 'unblevable/quick-scope'
     use 'glepnir/dashboard-nvim'
     use 'kdheepak/lazygit.nvim'
+    use 'shaunsingh/moonlight.nvim'
 end)
 
