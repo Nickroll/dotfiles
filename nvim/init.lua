@@ -21,6 +21,7 @@ require('quickscope-lua')
 require('dashboard-lua')
 require('lazygit-lua')
 require('asyncrun-lua')
+require('indent-blankline-lua')
 
 -- LSP
 require('compe-lua')

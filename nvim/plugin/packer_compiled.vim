@@ -95,6 +95,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/nick/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
   ["lazygit.nvim"] = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/lazygit.nvim"

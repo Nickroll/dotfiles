@@ -35,5 +35,6 @@ return require('packer').startup(function()
     use 'kdheepak/lazygit.nvim'
     use 'shaunsingh/moonlight.nvim'
     use 'skywind3000/asyncrun.vim'
+    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
 end)
 
