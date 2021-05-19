@@ -4,7 +4,7 @@ require('telescope').setup {
     defaults = {
         find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
         prompt_position = "bottom",
-        prompt_prefix = " ",
+        prompt_prefix = "  ",
         selection_caret = " ",
         entry_prefix = "  ",
         initial_mode = "insert",
@@ -47,7 +47,6 @@ require('telescope').setup {
 
                 -- Add up multiple actions
                 ["<CR>"] = actions.select_default + actions.center
-
                 -- You can perform as many actions in a row as you like
                 -- ["<CR>"] = actions.select_default + actions.center + my_cool_custom_action,
             },
