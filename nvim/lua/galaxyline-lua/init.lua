@@ -101,8 +101,8 @@ section.left = {
                     mode_name = current_mode[1]
                     mode_color = current_mode[2]
                 end
-
-                require('highlite').highlight('GalaxyViMode', {fg = _COLORS.font, bg = mode_color, style = 'bold'})
+		vim.api.nvim_command('hi GalaxyViMode guifg='.._COLORS.font..', guibg='..mode_color)
+                --require('highlite').highlight('GalaxyViMode', {fg = _COLORS.font, bg = mode_color, style = 'bold'})
                 return ' ' .. mode_name .. ' '
             end
         }
