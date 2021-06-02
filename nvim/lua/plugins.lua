@@ -22,7 +22,6 @@ return require('packer').startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
     use {'glepnir/galaxyline.nvim', branch = 'main'}
-    use 'Iron-E/nvim-highlite'
     use 'windwp/nvim-autopairs'
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"windwp/nvim-ts-autotag", opt = true}
