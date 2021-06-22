@@ -123,10 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
-  ["nvim-highlite"] = {
-    loaded = true,
-    path = "/home/nick/.local/share/nvim/site/pack/packer/start/nvim-highlite"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
