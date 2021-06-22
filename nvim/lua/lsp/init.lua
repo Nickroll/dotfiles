@@ -49,9 +49,4 @@ function lsp_config.common_on_attach(client, bufnr)
     documentHighlight(client, bufnr)
 end
 
-function lsp_config.tsserver_on_attach(client, bufnr)
-    lsp_config.common_on_attach(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-end
-
 return lsp_config
