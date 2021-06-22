@@ -49,5 +49,5 @@ nvim_create_augroups({
         {'FileType', 'floaterm', 'nnoremap <silent> <buffer> q :q<CR>'}
     },
     _python = {{'FileType', 'python', 'nnoremap <Leader>y :AsyncRun -raw python %<CR>'}},
-    _rust = {{'FileType', 'rust', 'nnoremap <Leader>y :AsyncRun cargo run %<CR>'}}
+    _rust = {{'FileType', 'rust', 'nnoremap <Leader>y :AsyncRun cargo check %<CR>'}}
 })
